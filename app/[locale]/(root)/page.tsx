@@ -9,19 +9,19 @@ import Skills from '@/components/Action-Interface/User/Sections/Skills/Skills';
 
 export const generateMetadata = async () =>
   generateLocalizedMetadata({
-    titleEn: "Summit Courses Store – Learn. Grow. Succeed.",
-    titleAr: "متجر قمة الدورات – تعلم. تطور. نجاح",
+    titleEn: "Let’s Build Your Next Web Project Together",
+titleAr: "دعنا نبني مشروعك الرقمي القادم معًا",
 
-    descriptionEn:
-      "Browse and enroll in high-quality online courses designed to boost your professional skills.",
-    descriptionAr:
-      "تصفح وسجّل في دورات أونلاين عالية الجودة لتطوير مهاراتك المهنية.",
+descriptionEn:
+  "Looking for a web developer? Let’s collaborate to build fast, scalable, and modern web applications.",
+descriptionAr:
+  "هل تبحث عن مطور ويب؟ دعنا نتعاون لبناء تطبيقات ويب حديثة وسريعة وقابلة للتوسع.",
 
     keywordsEn:
-      "online courses store, buy courses, e-learning platform, summit courses",
-    keywordsAr:
-      "متجر الدورات, شراء الدورات, منصة تعليم إلكتروني, قمة الدورات",
-      
+  "hire web developer, full stack developer, freelance web developer, web development services, build web app, website development, modern web applications, next.js developer, react developer, scalable web solutions",
+
+keywordsAr:
+  "توظيف مطور ويب, مطور ويب متكامل, خدمات تطوير المواقع, إنشاء تطبيق ويب, تصميم مواقع احترافية, تطوير تطبيقات ويب, مطور Next.js, مطور React, حلول ويب قابلة للتوسع",
 
     path: "/home",
   });
