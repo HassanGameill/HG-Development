@@ -4,7 +4,6 @@ import AdminHeader from "@/components/Action-Interface/Admin/common/AdminHeader"
 import Sidebar from "@/components/Action-Interface/Admin/common/Sidebar/Sidebar";
 import Header from "@/components/Action-Interface/User/common/Header";
 import { redirect } from "@/i18n/routing";
-import { DOMAIN } from "@/lib/constants";
 import getCurrentUser from "@/lib/getCurrentUser";
 import React, { ReactNode } from "react";
 
@@ -19,7 +18,7 @@ const MainLayout = async ({ children }: IAdmin) => {
 
   if (!currentUser) {
     redirect({
-      href: `${DOMAIN}/`,
+      href: `/`,
       locale: "en",
     });
     return null;
