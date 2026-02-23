@@ -12,10 +12,6 @@ import { NextAuthProvider } from "../providers/SessionProvider";
 const myFont = localFont({ src: "../../fonts/Cairo-Medium.ttf" });
 
 export const metadata: Metadata = {
-  // title: {
-  //   default: "Summit",
-  //   template: "%s | Summit",
-  // },
   icons: {
     icon: [
       { url: "/icons/HG-Icon.png", sizes: "32x32", type: "image/png" },

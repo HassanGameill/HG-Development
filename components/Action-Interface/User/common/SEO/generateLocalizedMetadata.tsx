@@ -12,7 +12,7 @@ interface SEOProps {
 }
 
 // const SITE_NAME = "Summit Courses";
-const SITE_URL = "https://summitcourses.com";
+const SITE_URL = "https://hg-development.vercel.app";
 
 export async function generateLocalizedMetadata({
   titleEn,
@@ -30,7 +30,7 @@ export async function generateLocalizedMetadata({
   const description = isEn ? descriptionEn : descriptionAr;
   const keywords = isEn ? keywordsEn : keywordsAr;
 
-  const SITE_NAME = isEn ? "Summit Courses" : "كورسات القمه";
+  const SITE_NAME = isEn ? "HG" : "HG";
 
 
   const url = `${SITE_URL}/${locale}${path}`;

@@ -2,9 +2,9 @@
 
 
 // ______ Locale Running ______
-// export const DOMAIN = `http://localhost:3001`;
-// export const STORE = `http://localhost:3001`;
-// export const FRONTEND = `http://localhost:3001`;
+// export const DOMAIN = `http://localhost:3000`;
+// export const STORE = `http://localhost:3000`;
+// export const FRONTEND = `http://localhost:3000`;
 
 
 
