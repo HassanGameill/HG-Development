@@ -7,8 +7,8 @@ import Skills from "@/components/Action-Interface/User/Sections/Skills/Skills";
 
 export const generateMetadata = async () =>
   generateLocalizedMetadata({
-    titleEn: "HG-Development",
-    titleAr: "HG-Development",
+    titleEn: "Development",
+    titleAr: "Development",
 
     descriptionEn:
       "Let’s Build Your Next Web Project Together, Looking for a web developer? Let’s collaborate to build fast, scalable, and modern web applications.",
