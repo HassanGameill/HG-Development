@@ -12,6 +12,7 @@
 // export const DOMAIN = `http://72.60.80.158`;
 // export const STORE = `http://72.60.80.158`;
 // export const FRONTEND = `http://72.60.80.158`;
+// export const FRONTEND = `http://72.60.80.158`;
 
 
 
