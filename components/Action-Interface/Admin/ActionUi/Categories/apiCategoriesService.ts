@@ -1,4 +1,3 @@
-import { DOMAIN } from "@/lib/constants";
 import { CategoryFormValues } from "@/validation/Sections/Project/category";
 import axios from "axios";
 

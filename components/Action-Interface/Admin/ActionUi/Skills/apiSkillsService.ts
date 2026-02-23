@@ -1,4 +1,3 @@
-import { DOMAIN } from "@/lib/constants";
 import { SkillsFormValues } from "@/validation/Sections/skills";
 import axios from "axios";
 
