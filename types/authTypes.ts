@@ -1,0 +1,1 @@
+export type TAuthRoute = "login" | "register" | "verification";

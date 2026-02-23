@@ -1,0 +1,227 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+
+
+model User {
+  id             String        @id @default(auto()) @map("_id") @db.ObjectId
+  name           String?
+  email          String       @unique
+  emailVerified  DateTime?
+  avatar          Json?
+  password       String?
+  role           Role          @default(USER) // Added role field
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt // Fixed naming inconsistency
+  phone          String?
+  accounts       Account[]
+  sessions       Session[]
+}
+
+
+
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum Role {
+  OWNER
+  MANAGER
+  DEVELOPER
+  ADMIN
+  AdminOne
+  AdminTwo
+  USER
+}
+
+// ============ Constants Collections - START =========================
+model Hero {
+  id         String       @id @default(auto()) @map("_id") @db.ObjectId
+  slug       String       @unique
+  titleEn    String
+  titleAr    String
+  subtitleEn String
+  subtitleAr String
+  descEn     String       @default("")
+  descAr     String       @default("")
+  imageUrl   String       @default("")
+  heroImages HeroImages[]
+  position   Int?
+  isFeatured Boolean      @default(false)
+  isArchived Boolean      @default(false)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+}
+
+model HeroImages {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  heroId    String   @db.ObjectId
+  hero      Hero     @relation(fields: [heroId], references: [id], onDelete: Cascade)
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+// ============ Skills - START =========================
+
+
+model Skills {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  imageUrl        String           // e.g., 'Package', 'Shield', etc.
+  nameEn String
+  nameAr String
+  titleEn     String
+  titleAr     String
+  position  Int?
+  color      String
+  bgColor      String
+  skillsItem    SkillsItem[]  // relation to features
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model SkillsItem {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  skillsId   String          @db.ObjectId
+  skills     Skills   @relation(fields: [skillsId], references: [id], onDelete: Cascade)
+  name   String
+  level   Int
+  title   String
+  imageUrl        String           // e.g., 'Package', 'Shield', etc.
+}
+
+
+// ============ Skills - End =========================
+// ============ Experience - start =========================
+
+model Experience {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  slug        String @unique
+  imageUrl        String           // e.g., 'Package', 'Shield', etc.
+  titleEn     String
+  titleAr     String
+  subtitleEn String
+  subtitleAr String
+  features    ExperienceFeature[]  // relation to features
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model ExperienceFeature {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  experienceId   String          @db.ObjectId
+  experience     Experience   @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  featureEn   String
+  featureAr   String
+}
+
+// ============ Experience - End =========================
+// ============ Projects - Start =========================
+model Categories {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  projects  Project[] @relation("CategoriesToProjects")
+  nameEn    String
+  nameAr    String
+  titleEn    String
+  titleAr    String
+  imageUrl  String
+  position  Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+
+model ProjectTechnology {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  projectId   String          @db.ObjectId
+  project    Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name   String
+  imageUrl   String
+}
+
+model Project {
+  id                String           @id @default(auto()) @map("_id") @db.ObjectId
+  categoriesId      String           @db.ObjectId
+  categories        Categories       @relation("CategoriesToProjects", fields: [categoriesId], references: [id])
+
+  projectTechnology    ProjectTechnology[]  // relation to features
+
+  titleEn           String
+  titleAr           String
+  subtitleEn        String
+  subtitleAr        String
+
+  githubLink        String
+  demoLink          String
+
+  position          Int?
+
+  isFeatured   Boolean @default(false)
+  isArchived   Boolean @default(false)
+  images       Images[]
+  imageUrl     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoriesId])
+}
+
+model Images {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  productId String   @db.ObjectId
+  project   Project  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+}
+
+
+// ============ Projects - End =========================
+
+
+
+
+// ============ NOTIFICATION SYSTEM =========================
