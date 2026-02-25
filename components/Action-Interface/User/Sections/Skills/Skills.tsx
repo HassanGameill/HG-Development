@@ -20,7 +20,7 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <SkillsHeader />
 
-        <div className="grid md:grid-cols-2 gap-10 mx-10">
+        <div className="grid md:grid-cols-2 gap-10 lg:mx-10">
           {data?.map((category: TSkills, i: number) => (
             <SkillCategoryCard
               key={category.id || i} // fallback if id is undefined

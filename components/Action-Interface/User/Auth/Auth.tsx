@@ -1,16 +1,11 @@
-import { CiUser } from "react-icons/ci";
 import { TAuthRoute } from "@/types/authTypes";
 import AuthModel from "@/components/common/Model/AuthModel";
 import LoginForm from "./Login/LoginForm";
 import RegisterForm from "./Sign-Up/RegisterForm";
 import SocialAuthButtons from "./SocialAuth/SocialAuthButtons";
 import Verification from "./OTP-Verification/Verification";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Profile from "../common/Profile/Profile";
-import { useSession } from "next-auth/react";
-import { useSocialAuthMutation } from "@/redux/features/auth/authApi";
-import { useSelector } from "react-redux";
-import toast from "react-hot-toast";
 
 
 type TAuth = {

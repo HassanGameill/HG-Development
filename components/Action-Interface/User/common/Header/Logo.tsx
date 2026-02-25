@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <div className="">
       <Link href="/" className="inline-block" aria-label="Go Summit">
-        <div className="w-[52px] h-[52px] lg:w-[55px] lg:h-[55px] bg-white border-4 border-gray-200 dark:bg-blue-900/20 rounded-full  dark:shadow-xl shadow-md  dark:shadow-blue-900/30 flex items-center justify-center  dark:border-2  dark:border-blue-800/50 mx-auto md:mx-0">
+        <div className="w-[52px] h-[52px] lg:w-[55px] lg:h-[55px] bg-white border-4 border-gray-200 dark:bg-blue-900/20 rounded-full  dark:shadow-xl shadow-md  dark:shadow-blue-900/30 flex items-center justify-center  dark:border  dark:border-blue-800/50 mx-auto md:mx-0">
           <Image
             src={theme === "light" ? lightlogo : darklogo}
             alt="GO Summit Logo"
