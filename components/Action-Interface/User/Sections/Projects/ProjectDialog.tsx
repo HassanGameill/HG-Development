@@ -36,7 +36,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
     <ProjectModel open={open} onClose={() => setOpen(false)}>
       <div
         dir={isEn ? "ltr" : "rtl"}
-        className="flex flex-col gap-8  md:p-8 "
+        className="flex flex-col gap-8 pt-4 md:p-8 "
       >
         {/* 🔹 Project Image */}
         <div className="relative w-full h-40 md:h-[200px] rounded-2xl overflow-hidden border shadow-md">
@@ -75,7 +75,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
                   <div
                     className="w-8 h-8  lg:w-12 lg:h-12 rounded-xl
                     shadow-sm flex items-center justify-center
-                    bg-white dark:bg-slate-800 p-2
+                    bg-white dark:bg-slate-800 p-1
                     border transition-all duration-300
                     group-hover:scale-110 group-hover:shadow-md"
                   >
