@@ -28,7 +28,7 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="relative bg-gray-100 dark:bg-gray-900  w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
+      className="relative bg-gray-100 dark:bg-gray-900  w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px] "
     >
      <ContactHeader />
       {/* Content container */}
@@ -38,7 +38,7 @@ const ContactUs = () => {
           <ContactForm />
         </div>
 
-        <div className="w-full order-1 bg-white/85 dark:bg-slate-800/85 rounded-xl shadow-md py-4  flex justify-center">
+        <div className="w-full  order-1 bg-white/85 dark:bg-slate-800/85 rounded-xl shadow-md py-4  flex justify-center ">
           <div className="max-w-md text-center">
             <div className="relative w-40 h-40 md:w-64 md:h-64 mx-auto mb-8 group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-90 transition-all duration-500"></div>

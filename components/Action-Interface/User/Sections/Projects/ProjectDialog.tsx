@@ -16,7 +16,6 @@ type Props = {
 
 const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
   const {
-    images = [],
     titleEn,
     titleAr,
     subtitleEn,
@@ -37,7 +36,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
     <ProjectModel open={open} onClose={() => setOpen(false)}>
       <div
         dir={isEn ? "ltr" : "rtl"}
-        className="flex flex-col gap-8 p-6 md:p-10 "
+        className="flex flex-col gap-8  md:p-8 "
       >
         {/* 🔹 Project Image */}
         <div className="relative w-full h-40 md:h-[200px] rounded-2xl overflow-hidden border shadow-md">
@@ -63,7 +62,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
         {/* 🔹 Technologies */}
         {projectTechnology?.length > 0 && (
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase text-muted-foreground tracking-wide">
+            <h3 className="text-xs lg:text-sm font-semibold uppercase text-muted-foreground tracking-wide">
               {isEn ? "Technologies" : "التقنيات المستخدمة"}
             </h3>
 
@@ -74,7 +73,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
                   className="flex flex-col items-center gap-2 group"
                 >
                   <div
-                    className="w-12 h-12  rounded-xl
+                    className="w-8 h-8  lg:w-12 lg:h-12 rounded-xl
                     shadow-sm flex items-center justify-center
                     bg-white dark:bg-slate-800 p-2
                     border transition-all duration-300
@@ -90,7 +89,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
                     />
                   </div>
 
-                  <span className="text-[10px] lg:text-xs font-medium text-center">
+                  <span className="text-[8px] lg:text-xs font-medium text-center">
                     {tech.name}
                   </span>
                 </div>
