@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                       isArabic ? "right-3" : "left-3"
                     } top-3 w-10 h-10 rounded-full 
                       shadow-sm sm:shadow-lg flex items-center justify-center
-                      bg-white dark:bg-slate-800 p-1.5
+                      bg-white dark:bg-slate-800 p-1
                       border-[3px] border-gray-300 transition-all duration-300`}
                   >
                     <Image

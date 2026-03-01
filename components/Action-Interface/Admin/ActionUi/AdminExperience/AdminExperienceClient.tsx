@@ -41,8 +41,8 @@ const ExperienceClient: React.FC<HeroClientProps> = ({ data }) => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title={`Our Projects (${data.length})`}
-          description="Mange Brands for your store "
+          title={`Experience (${data.length})`}
+          description="Mange Experience for your store "
         />
 
         <Button
