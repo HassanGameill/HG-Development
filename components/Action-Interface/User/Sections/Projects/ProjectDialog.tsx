@@ -36,7 +36,7 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
     <ProjectModel open={open} onClose={() => setOpen(false)}>
       <div
         dir={isEn ? "ltr" : "rtl"}
-        className="flex flex-col gap-8 pt-4 md:p-8 "
+        className="flex flex-col gap-8 pt-5 md:p-8 "
       >
         {/* 🔹 Project Image */}
         <div className="relative w-full h-40 md:h-[200px] rounded-2xl overflow-hidden border shadow-md">
@@ -100,20 +100,6 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
 
         {/* 🔹 Action Buttons */}
         <div className="flex  items-center gap-3 pt-4 ">
-          {demoLink && (
-            <Link
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 flex items-center gap-2 rounded-xl 
-              bg-primary text-white text-sm font-medium 
-              hover:scale-105 hover:shadow-md transition-all"
-            >
-              <FaExternalLinkAlt />
-              <span className="hidden lg:block text-xs">{isEn ? "Live Demo" : "عرض المشروع"}</span>
-            </Link>
-          )}
-
           {githubLink && (
             <Link
               href={githubLink}
@@ -127,6 +113,21 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
               <span className="hidden lg:block text-xs">{isEn ? "GitHub Repo" : "كود المشروع"}</span>
             </Link>
           )}
+          {demoLink && (
+            <Link
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 flex items-center gap-2 rounded-xl 
+              bg-primary dark:text-slate-900 text-white text-sm font-medium 
+              hover:scale-105 hover:shadow-md transition-all"
+            >
+              <FaExternalLinkAlt />
+              <span className="hidden lg:block text-xs">{isEn ? "Live Demo" : "عرض المشروع"}</span>
+            </Link>
+          )}
+
+          
         </div>
       </div>
     </ProjectModel>

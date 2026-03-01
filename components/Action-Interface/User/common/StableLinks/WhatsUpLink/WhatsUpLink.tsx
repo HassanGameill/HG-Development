@@ -26,12 +26,12 @@ export default function WhatsUpLink() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
   return (
-    <div className="hidden lg:block fixed bottom-8 left-8 z-[99]" data-aos="fade-up">
+    <div className=" fixed bottom-8 left-8 z-[99]" data-aos="fade-up">
       {isVisible && (
         <Link href={"https://wa.me/+201021432599"}  target="_blank">
         <div
           aria-label="WhatsApp Link"
-          className="relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-green-900 dark:bg-white text-white dark:text-green-600  shadow-md transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp group"
+          className="relative flex h-10 w-10 lg:h-12 lg:w-12 cursor-pointer items-center justify-center rounded-full bg-green-900 dark:bg-white text-white dark:text-green-600  shadow-md transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp group"
         >
           <span className="text-[2rem]">
             <FaWhatsapp />
