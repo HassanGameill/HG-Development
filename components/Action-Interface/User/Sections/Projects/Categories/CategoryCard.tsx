@@ -29,7 +29,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       tabIndex={0}
       aria-label={`Select ${name} category`}
       className={`
-        flex flex-col items-center gap-2 py-2
+        flex flex-col items-center gap-2 py-2 
 
         cursor-pointer select-none
         transition-all duration-250 ease-out

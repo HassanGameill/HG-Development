@@ -1,6 +1,12 @@
 import { THero } from "./heroType";
 import imageOne from "@/public/images/Hassan-1.jpg"
 
+
+  // ? "مطور Full Stack متخصص في بناء تطبيقات ويب وشاملة من البداية للنهاية. هل تحتاج نظامًا لإدارة أعمالك؟ موقع ويب تفاعلي؟ أو حل برمجي مخصص؟ دعنا نناقش مشروعك!"
+  // : "Full Stack Developer specializing in end-to-end web applications. Need a business management system? Interactive website? Or custom software solution? Let's discuss your project!";
+
+
+
 export const HeroData: THero[] = [
   {
     id: "1",
@@ -9,8 +15,8 @@ export const HeroData: THero[] = [
     titleAr: "Full Stack Software Engineer",
     subtitleEn: "Building Modern, Scalable Web APP & Mobile Applications",
     subtitleAr: "بناء تطوير تطبيقات الويب والجوال الحديثه القابلة للتوسع",
-    descEn: "Value means paying attention to every detail.Every feature should be built to express a goal before implementation that is achievable, useful, and distinctive ✨",
-    descAr: "القيمة تعني الاهتمام بكل التفاصيل. يجب بناء كل ميزة للتعبير عن هدف قبل التنفيذ يمكن تحقيقه ومفيد , ومميز ✨",
+    descEn: "Full Stack Developer specializing in end-to-end web applications. Need a business management system? Interactive website? Or custom software solution? Let's discuss your project!",
+    descAr: "مطور Full Stack متخصص في بناء تطبيقات ويب وشاملة من البداية للنهاية. هل تحتاج نظامًا لإدارة أعمالك؟ موقع ويب تفاعلي؟ أو حل برمجي مخصص؟ دعنا نناقش مشروعك!",
     heroImages: [
       { url: imageOne },
       { url: imageOne },

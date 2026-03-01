@@ -15,6 +15,7 @@ type InputFormProps<T extends FieldValues> = {
   type?: string;
   placeholder?: string;
   disabled?: boolean;
+  dir?: string;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 
@@ -26,6 +27,7 @@ const InputForm = <T extends FieldValues>({
   placeholder,
   disabled,
   onBlur,
+  dir
 }: InputFormProps<T>) => {
   return (
     <FormField
@@ -41,6 +43,7 @@ const InputForm = <T extends FieldValues>({
               type={type}
               placeholder={placeholder}
               disabled={disabled}
+              dir={dir}
                onChange={(e) => {
                 const value = e.target.value;
 

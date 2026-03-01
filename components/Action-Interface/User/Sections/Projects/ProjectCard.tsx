@@ -8,11 +8,9 @@ import { useLocale } from "next-intl";
 import { useTheme } from "next-themes";
 import lightlogo from "@/public/logos/hg-dev-1.png";
 import darklogo from "@/public/logos/hg-dev-2.png";
-import { Project } from "./projectType";
 import { TProject } from "@/types/projects/projectType";
 import ProjectDialog from "./ProjectDialog";
 import { useState } from "react";
-import Link from "@/components/common/Link";
 import { HiOutlineLightBulb } from "react-icons/hi2";
 
 type Props = {

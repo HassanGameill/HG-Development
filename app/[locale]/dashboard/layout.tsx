@@ -13,8 +13,7 @@ interface IAdmin {
 
 const MainLayout = async ({ children }: IAdmin) => {
   const currentUser = await getCurrentUser();
-  console.log("USER_ADMIN", currentUser)
-
+  console.log("USER_ADMIN", currentUser);
 
   if (!currentUser) {
     redirect({
@@ -29,17 +28,33 @@ const MainLayout = async ({ children }: IAdmin) => {
       <ReduxProvider>
         <div className="h-screen w-full flex overflow-hidden">
           {/* Sidebar */}
-          <aside className="hidden md:flex h-full w-56  flex-col shadow-sm ">
+          <aside className="hidden md:flex h-full w-56 flex-col shadow-sm">
             <Sidebar />
           </aside>
 
-          {/* Content */}
-          <main className="flex-1 overflow-y-auto bg-gray-50 dark:bg-slate-900 ">
-            <AdminHeader />
+          {/* Right Side */}
+          <div className="flex flex-col flex-1 min-h-0">
+            {/* Header */}
+            <div className="shrink-0">
+              <AdminHeader />
+            </div>
 
-            {children}
-          </main>
+            {/* ONLY THIS SCROLLS */}
+            <main className="flex-1 overflow-y-auto bg-gray-50 dark:bg-slate-900">
+              {children}
+            </main>
+          </div>
         </div>
+
+
+
+
+
+
+
+
+
+        
       </ReduxProvider>
     </TanstackProvider>
   );

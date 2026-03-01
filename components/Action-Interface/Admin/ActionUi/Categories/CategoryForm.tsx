@@ -23,10 +23,9 @@ interface FormProps {
 }
 
 const CategoryForm: React.FC<FormProps> = ({ initialData }) => {
+
   const { form, onSubmit, loading } = useCategoryForm(initialData);
   const router = useRouter();
-
-  
 
   //   ___ Action Content Handler _____
   const title = initialData ? "Edit Hero" : "Create Hero";

@@ -13,12 +13,14 @@ type SliderListProps<T extends Record<string, any>> = {
   records?: T[];
   renderItem: (itemData: T) => React.ReactNode;
   emptyMessage: string;
+  smallNumber?: number;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SliderGroupList = <T extends Record<string, any>>({
   records = [],
   renderItem,
+  smallNumber,
 }: SliderListProps<T>): JSX.Element => {
   const [init, setInit] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -55,20 +57,20 @@ const SliderGroupList = <T extends Record<string, any>>({
         autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         breakpoints={{
           340: {
-            slidesPerView: 2,
+            slidesPerView: smallNumber,
             spaceBetween: 10,
           },
           440: {
-            slidesPerView: 2,
+            slidesPerView: smallNumber,
             spaceBetween: 10,
           },
           576: {
-            slidesPerView: 2,
+            slidesPerView: smallNumber,
             spaceBetween: 16,
           },
           // Tablet (768px and up)
           768: {
-            slidesPerView: 3,
+            slidesPerView: smallNumber,
             spaceBetween: 16,
           },
           // Large tablet (900px and up)
@@ -81,16 +83,7 @@ const SliderGroupList = <T extends Record<string, any>>({
             slidesPerView: 4,
             spaceBetween: 20,
           },
-          // Large desktop (1200px and up)
-          // 1200: {
-          //   slidesPerView: 5,
-          //   spaceBetween: 24,
-          // },
-          // // Extra large desktop (1400px and up)
-          // 1400: {
-          //   slidesPerView: 5,
-          //   spaceBetween: 24,
-          // }
+         
           
         }}
         navigation={{
@@ -102,7 +95,7 @@ const SliderGroupList = <T extends Record<string, any>>({
       >
         {records.length > 0 ? (
           records.map((itemData) => (
-            <SwiperSlide key={itemData.slug}>{renderItem(itemData)}</SwiperSlide>
+            <SwiperSlide className="" key={itemData.slug}>{renderItem(itemData)}</SwiperSlide>
           ))
         ) : (
           <SwiperSlide>
@@ -123,16 +116,16 @@ const SliderGroupList = <T extends Record<string, any>>({
         <div
           ref={prevRef}
           className={`p-2  lg:p-3 rounded-full  ${
-            isAtBeginning ? "bg-black/70 text-white" : "bg-[#F6AA02] text-black"
-          } cursor-pointer shadow-sm absolute -left-1 lg:-left-4`}
+            isAtBeginning ? "bg-black/70 text-white" : "bg-blue-900 text-white"
+          } cursor-pointer shadow-sm absolute -left-5 lg:-left-4`}
         >
           <HiChevronLeft />
         </div>
         <div
           ref={nextRef}
           className={`p-2 lg:p-3 rounded-full ${
-            isAtEnd ? "bg-black/70 text-white" : "bg-[#F6AA02] text-black"
-          } cursor-pointer shadow-sm absolute right-1  lg:-right-4`}
+            isAtEnd ? "bg-black/70 text-white" : "bg-blue-900 text-white"
+          } cursor-pointer shadow-sm absolute -right-5  lg:-right-4`}
         >
           <HiChevronRight />
         </div>

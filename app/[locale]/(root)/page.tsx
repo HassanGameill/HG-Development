@@ -1,6 +1,8 @@
 import Header from "@/components/Action-Interface/User/common/Header";
 import { generateLocalizedMetadata } from "@/components/Action-Interface/User/common/SEO/generateLocalizedMetadata";
 import AboutSection from "@/components/Action-Interface/User/Sections/About/About";
+import ContactUs from "@/components/Action-Interface/User/Sections/ContactUs";
+import ExperienceClient from "@/components/Action-Interface/User/Sections/Experience/ExperienceClient";
 import Hero from "@/components/Action-Interface/User/Sections/HeroSection/Hero";
 import ProjectsSection from "@/components/Action-Interface/User/Sections/Projects/ProjectSection";
 import Skills from "@/components/Action-Interface/User/Sections/Skills/Skills";
@@ -31,6 +33,8 @@ const HomePage = () => {
       <AboutSection />
       <Skills />
       <ProjectsSection />
+      <ExperienceClient />
+      <ContactUs />
     </main>
   );
 };

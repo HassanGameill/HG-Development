@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground)
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+
 
 
 @layer utilities {

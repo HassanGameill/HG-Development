@@ -1,37 +1,36 @@
-import CategoryForm from "@/components/Action-Interface/Admin/ActionUi/Categories/CategoryForm";
+import ExperienceAdminForm from "@/components/Action-Interface/Admin/ActionUi/AdminExperience/ExperienceAdminForm";
 import prisma from "@/lib/prismadb";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-export default async function CategoryPage({ params }: PageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   // For new brand creation
 
   if ((await params).id === "new") {
     return (
       <div className="flex-col w-full ">
         <div className="flex-1 space-y-4 p-8 pt-6">
-          <CategoryForm initialData={null}  />
+          <ExperienceAdminForm initialData={null} />
         </div>
       </div>
     );
   }
 
-  const category = await prisma.categories.findUnique({
+  const experience = await prisma.experience.findUnique({
     where: {
       id: (await params).id,
     },
-   
+    include: {
+      experienceAchievement: true,
+    },
   });
-
-  console.log("CAt", category)
-  
 
   return (
     <div className="flex-col w-full">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <CategoryForm initialData={category}  />
+        <ExperienceAdminForm initialData={experience} />
       </div>
     </div>
   );

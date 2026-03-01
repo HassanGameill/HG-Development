@@ -136,23 +136,28 @@ model SkillsItem {
 
 model Experience {
   id          String           @id @default(auto()) @map("_id") @db.ObjectId
-  slug        String @unique
-  imageUrl        String           // e.g., 'Package', 'Shield', etc.
-  titleEn     String
-  titleAr     String
-  subtitleEn String
-  subtitleAr String
-  features    ExperienceFeature[]  // relation to features
+  position    Int?           // e.g., 'Package', 'Shield', etc.
+  title     String
+  subtitle     String
+  companyName     String
+  startPeriod String
+  endPeriod String
+  imageUrl String
+
+  experienceAchievement    ExperienceAchievement[]  // relation to features
+  isCurrent    Boolean  @default(false)
   createdAt   DateTime         @default(now())
   updatedAt   DateTime         @updatedAt
 }
 
-model ExperienceFeature {
+model ExperienceAchievement {
   id          String          @id @default(auto()) @map("_id") @db.ObjectId
   experienceId   String          @db.ObjectId
   experience     Experience   @relation(fields: [experienceId], references: [id], onDelete: Cascade)
-  featureEn   String
-  featureAr   String
+  title   String
+  subtitle   String
+  position    Int?           // e.g., 'Package', 'Shield', etc.
+
 }
 
 // ============ Experience - End =========================

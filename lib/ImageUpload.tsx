@@ -62,7 +62,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                 onClick={() => handleRemove(url)}
                 variant="destructive"
                 size="icon"
-                className="bg-red-600 text-white hover:bg-red-800"
+                className="bg-red-600 h-8 w-8 text-white hover:bg-red-800"
               >
                 <Trash className="h-4 w-4" />
               </Button>
@@ -91,8 +91,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               onClick={() => open()}
               className="bg-red-600 text-white hover:bg-slate-500"
             >
-              <ImagePlusIcon className="h-4 w-4 mr-1 text-sm" />
-              Upload Image
+              <ImagePlusIcon className="h-4 w-4  text-sm" />
+              Upload
             </Button>
           );
         }}

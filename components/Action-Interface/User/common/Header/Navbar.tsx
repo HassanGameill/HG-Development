@@ -134,7 +134,7 @@ export default function Navbar() {
                     className={cn(
                       "relative  text-lg font-medium  transition-colors",
                       active === link.href
-                        ? "text-white bg-primary px-3 py-1 rounded-lg"
+                        ? "text-white bg-primary dark:text-slate-800 px-3 py-1 rounded-lg"
                         : "text-blue-900 dark:text-white hover:text-white"
                     )}
                   >
