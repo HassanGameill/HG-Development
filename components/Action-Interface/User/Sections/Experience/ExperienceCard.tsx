@@ -72,7 +72,7 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                   {/* Card */}
                   <Card
                     className={`
-    relative overflow-hidden rounded-2xl p-7 
+    relative overflow-hidden rounded-2xl p-2 lg:p-7
     transition-all duration-300 ease-out
     hover:-translate-y-1 hover:shadow-2xl
     group
@@ -94,7 +94,7 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                             <div
                               className={` ${
                                 isArabic ? "right-3" : "left-3"
-                              } top-3 w-16 h-16 rounded-xl
+                              } top-3 w-10 h-10 lg:w-16 lg:h-16 rounded-xl
                       shadow-sm sm:shadow-sm flex items-center justify-center
                       bg-white dark:bg-slate-800 p-1
                       border-[2px] border-gray-300 transition-all duration-300`}
@@ -109,10 +109,10 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                               />
                             </div>
                             <div className="flex flex-col gap-1 text-shadow-sm">
-                              <span className="text-sm text-red-800 dark:text-blue-400">
+                              <span className="text-xs lg:text-sm text-red-800 dark:text-blue-400">
                                 {milestone.companyName}
                               </span>
-                              <span className="text-lg">{milestone.title}</span>
+                              <span className="text-sm lg:text-lg">{milestone.title}</span>
                               
                             </div>
                           </CardTitle>

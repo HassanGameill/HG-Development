@@ -13,7 +13,7 @@ const ExperienceClient = () => {
   if (isLoading) return <p>Loading skills...</p>;
   if (error) return <p>Failed to load skills</p>;
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 dark:bg-slate-800">
       <ExperienceHeader />
 
       <ExperienceCard experience={data as []} />

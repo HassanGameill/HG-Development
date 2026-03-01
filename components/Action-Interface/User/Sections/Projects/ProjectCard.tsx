@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: Props) {
 
   return (
     <motion.article
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col my-5"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col my-5 "
       whileHover={{ scale: 1.03 }}
       // onClick={() => setOpen(true)}
     >
@@ -54,13 +54,13 @@ export default function ProjectCard({ project }: Props) {
       {/* Content */}
       <div className="px-6 py-2 flex-grow">
         <motion.h3
-          className="text-xl font-semibold"
+          className="text-lg lg:text-xl font-semibold line-clamp-1"
           whileHover={{ x: 5 * dir }}
         >
           {locale === "ar" ? project.titleAr : project.titleEn}
         </motion.h3>
 
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
           {locale === "ar" ? project.subtitleAr : project.subtitleEn}
         </p>
       </div>

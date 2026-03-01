@@ -1,9 +1,11 @@
-"use Client";
+"use client";
+
 import Gallery from "@/components/common/Gallery/Gallery";
 import Link from "@/components/common/Link";
 import ProjectModel from "@/components/common/Model/ProjectModel";
 import { TProject } from "@/types/projects/projectType";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 type Props = {
@@ -19,61 +21,97 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
     titleAr,
     subtitleEn,
     subtitleAr,
+    imageUrl,
     demoLink,
     githubLink,
     projectTechnology,
   } = projectsData;
+
   const locale = useLocale();
   const isEn = locale === "en";
-
-  const formattedImages = images.map((img, index) => ({
-    url: img.url,
-    id: `image-${index}`, // Generate a unique id if not provided
-    // Add any other required ImageType properties here
-  }));
 
   const title = isEn ? titleEn : titleAr;
   const subtitle = isEn ? subtitleEn : subtitleAr;
 
   return (
     <ProjectModel open={open} onClose={() => setOpen(false)}>
-      <div dir={isEn ? "ltr" : "rtl"} className="flex flex-col gap-6 p-10">
-        <div className="rounded-xl overflow-hidden border shadow-sm">
-          <Gallery
-            className="w-[70%] flex justify-start my-2"
-            images={formattedImages}
-            Alt={title}
+      <div
+        dir={isEn ? "ltr" : "rtl"}
+        className="flex flex-col gap-8 p-6 md:p-10 "
+      >
+        {/* 🔹 Project Image */}
+        <div className="relative w-full h-40 md:h-[200px] rounded-2xl overflow-hidden border shadow-md">
+          <Image
+            src={imageUrl}
+            alt={`${title} project screenshot`}
+            fill
+            className="object-cover"
+            priority
           />
         </div>
 
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-          <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
+        {/* 🔹 Title & Subtitle */}
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-bold tracking-tight">
+            {title}
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+            {subtitle}
+          </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {projectTechnology?.map((tech) => (
-            <span
-              key={tech.id}
-              className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-            >
-              {tech.name}
-            </span>
-          ))}
-        </div>
+        {/* 🔹 Technologies */}
+        {projectTechnology?.length > 0 && (
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase text-muted-foreground tracking-wide">
+              {isEn ? "Technologies" : "التقنيات المستخدمة"}
+            </h3>
 
-        <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
+              {projectTechnology.map((tech) => (
+                <div
+                  key={tech.id}
+                  className="flex flex-col items-center gap-2 group"
+                >
+                  <div
+                    className="w-12 h-12  rounded-xl
+                    shadow-sm flex items-center justify-center
+                    bg-white dark:bg-slate-800 p-2
+                    border transition-all duration-300
+                    group-hover:scale-110 group-hover:shadow-md"
+                  >
+                    <Image
+                      src={tech.imageUrl}
+                      alt={tech.name}
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      className="object-contain"
+                    />
+                  </div>
+
+                  <span className="text-[10px] lg:text-xs font-medium text-center">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 🔹 Action Buttons */}
+        <div className="flex  items-center gap-3 pt-4 ">
           {demoLink && (
             <Link
               href={demoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 flex items-center gap-2 rounded-lg bg-primary  text-white dark:text-slate-800 text-sm font-medium hover:scale-105 transition"
+              className="px-5 py-2.5 flex items-center gap-2 rounded-xl 
+              bg-primary text-white text-sm font-medium 
+              hover:scale-105 hover:shadow-md transition-all"
             >
-                                          <FaExternalLinkAlt />
-
-              <span className=""> Live Demo</span>
-
+              <FaExternalLinkAlt />
+              <span className="hidden lg:block text-xs">{isEn ? "Live Demo" : "عرض المشروع"}</span>
             </Link>
           )}
 
@@ -82,13 +120,12 @@ const ProjectDialog = ({ projectsData, open, setOpen }: Props) => {
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 flex items-center gap-2 rounded-lg border text-sm font-medium hover:bg-muted transition"
+              className="px-5 py-2.5 flex items-center gap-2 rounded-xl 
+              border text-sm font-medium 
+              hover:bg-muted hover:scale-105 transition-all"
             >
               <FaGithub />
-
-              <span className=""> GitHub Repo</span>
-
-              
+              <span className="hidden lg:block text-xs">{isEn ? "GitHub Repo" : "كود المشروع"}</span>
             </Link>
           )}
         </div>

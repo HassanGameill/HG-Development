@@ -55,6 +55,7 @@ export default function ProjectsGrid() {
             records={catData}
             renderItem={categoryList}
             smallNumber={3}
+            bgScreen={5}
             emptyMessage="There is no category"
           />
         </div>
@@ -62,7 +63,8 @@ export default function ProjectsGrid() {
         <SliderGroupList
           records={filteredProducts}
           renderItem={ProjectsList}
-          smallNumber={2}
+          smallNumber={1}
+          bgScreen={3}
           emptyMessage="There is no category"
         />
       </div>

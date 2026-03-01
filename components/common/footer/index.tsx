@@ -97,16 +97,21 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
 ];
 
+
+  // ? "مطور Full Stack متخصص في بناء تطبيقات ويب وشاملة من البداية للنهاية. هل تحتاج نظامًا لإدارة أعمالك؟ موقع ويب تفاعلي؟ أو حل برمجي مخصص؟ دعنا نناقش مشروعك!"
+  // : "Full Stack Developer specializing in end-to-end web applications. Need a business management system? Interactive website? Or custom software solution? Let's discuss your project!";
+
+
 const FOOTER_CONTENT: FooterContent = {
   description: {
-    en: `Mansour Group for Sweets and Integrated Food Industries, 50 years of leadership, quality and integration.`,
-    ar: `مجموعة المنصور للحلويات والصناعات الغذائية المتكاملة، 50 عاما من الريادة والجودة والتكامل`,
+    en: "Full Stack Developer specializing in end-to-end web applications. Need a business management system? Interactive website? Or custom software solution? Let's discuss your project!",
+    ar: "مطور Full Stack متخصص في بناء تطبيقات ويب وشاملة من البداية للنهاية. هل تحتاج نظامًا لإدارة أعمالك؟ موقع ويب تفاعلي؟ أو حل برمجي مخصص؟ دعنا نناقش مشروعك!",
   },
   links: [
     { en: "Home", ar: "الرئسيه", href: "#" },
-    { en: "About", ar: "من نحن", href: "/about" },
-    { en: "Products", ar: "المنتجات", href: "/products" },
-    { en: "Contact", ar: "اتصل بنا", href: "/contact" },
+    { en: "Skills", ar: "المهارات", href: "#skills" },
+    { en: "Projects", ar: "المشاريع", href: "#project" },
+    { en: "Contact", ar: "اتصل بنا", href: "#contact" },
   ],
 
   specialties: [
@@ -133,8 +138,8 @@ const FOOTER_CONTENT: FooterContent = {
   ],
 
   contact: {
-    email: "info@mansoursweet.com",
-    phone: "+20502770996",
+    email: "hasanaboalion@gmail.com",
+    phone: "+201021432599",
   },
 };
 

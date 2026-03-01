@@ -14,6 +14,7 @@ type SliderListProps<T extends Record<string, any>> = {
   renderItem: (itemData: T) => React.ReactNode;
   emptyMessage: string;
   smallNumber?: number;
+  bgScreen?: number;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,6 +22,7 @@ const SliderGroupList = <T extends Record<string, any>>({
   records = [],
   renderItem,
   smallNumber,
+  bgScreen,
 }: SliderListProps<T>): JSX.Element => {
   const [init, setInit] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -75,12 +77,12 @@ const SliderGroupList = <T extends Record<string, any>>({
           },
           // Large tablet (900px and up)
           900: {
-            slidesPerView: 3,
+            slidesPerView: bgScreen,
             spaceBetween: 20,
           },
           // Desktop (1024px and up)
           1024: {
-            slidesPerView: 4,
+            slidesPerView: bgScreen,
             spaceBetween: 20,
           },
          
