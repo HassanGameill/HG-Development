@@ -62,7 +62,7 @@ export default function ProjectsGrid() {
 
         <div className="">
           <SliderGroupList
-          records={filteredProducts?.slice(0,4)}
+          records={filteredProducts?.slice(0,5)}
           renderItem={ProjectsList}
           smallNumber={1}
           bgScreen={3}
@@ -70,7 +70,7 @@ export default function ProjectsGrid() {
         />
 
         <SliderGroupList
-          records={filteredProducts?.slice(4, 8)}
+          records={filteredProducts?.slice(4, 16)}
           renderItem={ProjectsList}
           smallNumber={1}
           bgScreen={3}
