@@ -112,8 +112,9 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                               <span className="text-xs lg:text-sm text-red-800 dark:text-blue-400">
                                 {milestone.companyName}
                               </span>
-                              <span className="text-sm lg:text-lg">{milestone.title}</span>
-                              
+                              <span className="text-sm lg:text-lg">
+                                {milestone.title}
+                              </span>
                             </div>
                           </CardTitle>
 
@@ -152,7 +153,10 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                       </div>
 
                       {milestone.subtitle && (
-                        <div dir="ltr" className="pt-4 border-t ext-shadow-xs border-slate-200 dark:border-slate-700">
+                        <div
+                          dir="ltr"
+                          className="pt-4 border-t ext-shadow-xs border-slate-200 dark:border-slate-700"
+                        >
                           <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                             {milestone.subtitle}
                           </p>
@@ -168,12 +172,12 @@ const ExperienceCard = ({ experience }: HistoryCardTwoProps) => {
                     >
                       {/* Achievements Section */}
                       {milestone.experienceAchievement?.length > 0 && (
-                        <div className="space-y-4" >
+                        <div className="space-y-4">
                           <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                             {isArabic ? "أبرز الإنجازات" : "Key Achievements"}
                           </h4>
 
-                          <div className="space-y-4 text-shadow-xs" >
+                          <div className="space-y-4 text-shadow-xs">
                             {milestone.experienceAchievement.map(
                               (achievement, i) => (
                                 <div key={i} className="group/achievement">

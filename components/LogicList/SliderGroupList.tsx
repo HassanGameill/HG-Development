@@ -23,6 +23,7 @@ const SliderGroupList = <T extends Record<string, any>>({
   renderItem,
   smallNumber,
   bgScreen,
+  emptyMessage
 }: SliderListProps<T>): JSX.Element => {
   const [init, setInit] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -102,7 +103,7 @@ const SliderGroupList = <T extends Record<string, any>>({
         ) : (
           <SwiperSlide>
             <div>
-              thre is now category
+              {emptyMessage}
             </div>
           </SwiperSlide>
         )}

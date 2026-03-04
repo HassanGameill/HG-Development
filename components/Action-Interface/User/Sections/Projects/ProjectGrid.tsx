@@ -49,7 +49,7 @@ export default function ProjectsGrid() {
 
   return (
     <section className="text-center  ">
-      <div className="container flex flex-col gap-16 ">
+      <div className="container flex flex-col gap-12 ">
         <div className="bg-slate-200 dark:bg-slate-800 rounded-xl">
           <SliderGroupList
             records={catData}
@@ -60,13 +60,25 @@ export default function ProjectsGrid() {
           />
         </div>
 
-        <SliderGroupList
-          records={filteredProducts}
+        <div className="">
+          <SliderGroupList
+          records={filteredProducts?.slice(0,4)}
           renderItem={ProjectsList}
           smallNumber={1}
           bgScreen={3}
           emptyMessage="There is no category"
         />
+
+        <SliderGroupList
+          records={filteredProducts?.slice(4, 8)}
+          renderItem={ProjectsList}
+          smallNumber={1}
+          bgScreen={3}
+          emptyMessage=""
+        />
+        </div>
+
+        
       </div>
     </section>
   );
