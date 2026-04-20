@@ -11,6 +11,11 @@ import { NextAuthProvider } from "../providers/SessionProvider";
 
 const myFont = localFont({ src: "../../fonts/Cairo-Medium.ttf" });
 
+
+
+
+
+
 export const metadata: Metadata = {
   icons: {
     icon: [
@@ -24,6 +29,9 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+
+
 
 export default async function LocaleLayout({
   children,
